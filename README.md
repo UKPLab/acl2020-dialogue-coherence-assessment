@@ -16,7 +16,7 @@ Thanks.
 * conda: 4.7.10
 * Python: 3.6.8
 * GCC 7.3.0
-* More info: [conda-spec.txt](https://github.com/MMesgar/DiCoh/blob/master/conda-spec.txt)
+
 
 ### Conda environment ###
 
