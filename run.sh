@@ -31,7 +31,7 @@ module load cuda/9
  us is UR in the paper
  '
 
-TASKS=(us)      # (up ui us hup)
+TASKS=(up)      # (up ui us hup)
 MODELS=(random) # (random cosine model-3) # model-3 is our MTL model
 LOSSES=(mtl)    # (mtl coin da coh) # which loss function to use for training
 NUMEXPRIMENTS=1
@@ -51,7 +51,7 @@ do
         for ((CNT = 0 ; CNT < $NUMEXPRIMENTS ; CNT++));
         do
 
-            echo $TASK $MODEL $CNT+1
+            echo $TASK $MODEL $CNT
             python $DiCoh/mtl_coherency.py  --logdir $Results/$CORPUS/$TASK/$MODEL \
                                             --datadir $DataDailyDialog \
                                             --task $TASK \

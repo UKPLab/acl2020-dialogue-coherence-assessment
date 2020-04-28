@@ -51,7 +51,6 @@ TASKS=(up)
 DATASETS=(train validation test)
 
 ################
-: '
 CORPUS="DailyDialog"
 
 for TASK in ${TASKS[@]};
@@ -67,11 +66,11 @@ do
                                                       --task $TASK
     done
 done
-'
+
 ################
 echo ****************************
 ################
-
+:'
 if [[ -d  $DataSwitchBoard ]];
 then
     rm -r $DataSwitchBoard
@@ -114,7 +113,7 @@ do
                                                   --task $TASK \
                                                   --amount 20
 done
-
+'
 ################
 
 #seed 135486(used for aaai) 290189(new)
