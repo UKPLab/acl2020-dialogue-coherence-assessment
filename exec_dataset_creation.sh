@@ -60,7 +60,7 @@ do
             echo $CORPUS $DSET $TASK
 
             python $DiCoh/create_coherency_dataset.py --corpus $CORPUS \
-                                                      --seed 290189 \
+                                                      --seed 135486 \
                                                       --datadir $DataDailyDialog/$DSET \
                                                       --amount 20 \
                                                       --task $TASK
@@ -70,7 +70,7 @@ done
 ################
 echo ****************************
 ################
-:'
+
 if [[ -d  $DataSwitchBoard ]];
 then
     rm -r $DataSwitchBoard
@@ -113,7 +113,6 @@ do
                                                   --task $TASK \
                                                   --amount 20
 done
-'
+
 ################
 
-#seed 135486(used for aaai) 290189(new)
