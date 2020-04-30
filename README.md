@@ -55,8 +55,7 @@ bash exec_dataset_creation.sh
 ### Procedure ###
 
 ```bash
-
-bash run.sh
+python mtl_coherency.py --logdir logs --seed $RANDOM --datadir data/daily_dialog --task up --do_train --do_eval --model model-3 --loss mtl --cuda 0
 
 ```
 
