@@ -40,6 +40,35 @@ rm -r ijcnlp_dailydialog
 rm ijcnlp_dailydialog.zip
 ################
 
+if [[ -d  $DataSwitchBoard ]];
+then
+    rm -r $DataSwitchBoard
+    mkdir $DataSwitchBoard
+fi
+
+cd $DiCoh
+
+if [[ -d  $DiCoh/swda ]];
+then
+    rm -rf $DiCoh/swda
+fi
+
+git clone https://github.com/cgpotts/swda.git
+
+cp $DiCoh/swda/swda.zip $DataSwitchBoard/
+
+cd $DataSwitchBoard
+
+unzip -qq swda.zip 'swda/*'
+
+cd $DiCoh
+
+mv $DataSwitchBoard/swda/* $DataSwitchBoard/
+
+rm -rf $DataSwitchBoard/swda
+
+
+################
 TASKS=(up)
 : '
  up is UO in the paper
@@ -71,35 +100,6 @@ done
 echo ****************************
 ################
 
-if [[ -d  $DataSwitchBoard ]];
-then
-    rm -r $DataSwitchBoard
-    mkdir $DataSwitchBoard
-fi
-
-cd $DiCoh
-
-if [[ -d  $DiCoh/swda ]];
-then
-    rm -rf $DiCoh/swda
-fi
-
-git clone https://github.com/cgpotts/swda.git
-
-cp $DiCoh/swda/swda.zip $DataSwitchBoard/
-
-cd $DataSwitchBoard
-
-unzip -qq swda.zip 'swda/*'
-
-cd $DiCoh
-
-mv $DataSwitchBoard/swda/* $DataSwitchBoard/
-
-rm -rf $DataSwitchBoard/swda
-
-
-################
 
 CORPUS="Switchboard"
 for TASK in ${TASKS[@]};
